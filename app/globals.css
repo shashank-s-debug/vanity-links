@@ -7,6 +7,11 @@
    ========================================================================= */
 
 :root {
+  /* Typography — system stacks (swap in webfonts like Fraunces/Jakarta later) */
+  --font-sans-var: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display-var: "Fraunces", "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-mono-var: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+
   /* Surfaces — cool near-black, layered */
   --bg: #08090c;
   --bg-elev: #0d0f14;
@@ -59,6 +64,9 @@
 
   --radius-card: var(--radius);
   --radius-xl: var(--radius-lg);
+
+  --shadow-card: 0 10px 30px -12px rgba(0, 0, 0, 0.7);
+  --shadow-pop: 0 24px 60px -20px rgba(0, 0, 0, 0.8);
 }
 
 * {

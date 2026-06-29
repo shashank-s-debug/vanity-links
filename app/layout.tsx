@@ -1,34 +1,35 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { LumenProvider } from "@/lib/store";
 
 export const metadata: Metadata = {
-  title: "VanityLinks — Custom Short URLs",
-  description: "Create memorable vanity links that redirect to any destination",
+  title: {
+    default: "Lumen — Cinema, by the minute",
+    template: "%s · Lumen",
+  },
+  description:
+    "Lumen is a premium streaming home for microdramas — original, cinematic stories told in 60–120 second episodes. Binge a whole season in the time it takes to feel something.",
+  applicationName: "Lumen",
+  keywords: ["microdrama", "short drama", "vertical series", "streaming", "Lumen"],
+  openGraph: {
+    title: "Lumen — Cinema, by the minute",
+    description: "Original, cinematic microdramas. A whole season in one sitting.",
+    siteName: "Lumen",
+    type: "website",
+  },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = {
+  themeColor: "#08090c",
+  width: "device-width",
+  initialScale: 1,
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-gray-50 text-gray-900">
-        {children}
+    <html lang="en" className="h-full">
+      <body className="min-h-full bg-bg text-text antialiased">
+        <LumenProvider>{children}</LumenProvider>
       </body>
     </html>
   );

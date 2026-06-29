@@ -5,7 +5,7 @@ import { Play, Star } from "lucide-react";
 import type { Series } from "@/content/types";
 import { SeriesArt } from "@/lib/art";
 import { useLumen } from "@/lib/store";
-import { formatDurationCompact, pct } from "@/lib/format";
+import { pct } from "@/lib/format";
 import { FavoriteButton } from "./FavoriteButton";
 import { ProgressBar, cx } from "./ui";
 
@@ -27,10 +27,10 @@ export function PosterCard({
     <Link
       href={`/series/${series.slug}`}
       className={cx(
-        "group relative block shrink-0 card-hover ring-focus rounded-2xl",
+        "group relative block shrink-0 card-hover ring-focus rounded-2xl animate-fade-up",
         width === "wide" ? "w-[230px] sm:w-[280px]" : "w-[150px] sm:w-[180px]",
       )}
-      style={{ scrollSnapAlign: "start" }}
+      style={{ scrollSnapAlign: "start", animationDelay: `${Math.min(index, 8) * 0.04}s` }}
     >
       <div className="relative aspect-[2/3] overflow-hidden rounded-2xl border border-white/10 bg-bg-elev shadow-card">
         <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-105">

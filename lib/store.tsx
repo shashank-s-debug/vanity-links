@@ -100,17 +100,21 @@ export function LumenProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<PersistShape>(EMPTY);
   const [hydrated, setHydrated] = useState(false);
 
-  // Hydrate from localStorage after mount (avoids SSR mismatch).
+  // Hydrate from localStorage after mount. This is a deliberate read from an
+  // external store (the documented, supported use of an effect), so the
+  // set-state-in-effect rule is intentionally suppressed here.
   useEffect(() => {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (raw) {
         const parsed = JSON.parse(raw) as PersistShape;
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setState({ ...EMPTY, ...parsed });
       }
     } catch {
       /* ignore corrupt storage */
     }
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setHydrated(true);
   }, []);
 
@@ -182,7 +186,8 @@ export function LumenProvider({ children }: { children: ReactNode }) {
 
   const removeProfile = useCallback((id: string) => {
     setState((prev) => {
-      const { [id]: _removed, ...rest } = prev.byProfile;
+      const rest = { ...prev.byProfile };
+      delete rest[id];
       const profiles = prev.profiles.filter((p) => p.id !== id);
       return {
         ...prev,

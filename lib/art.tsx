@@ -12,7 +12,7 @@ import { hashString } from "./format";
 
 type Variant = "poster" | "hero" | "thumb" | "tile" | "still";
 
-function motifLayer(art: Art, seed: number, variant: Variant) {
+function motifLayer(art: Art, seed: number) {
   const { accent, accent2, glow } = art;
   const r = (n: number) => ((seed >> n) & 0xff) / 255;
 
@@ -162,7 +162,7 @@ export function SeriesArt({
 
       <rect width="100" height="100" fill={art.base} />
       <rect width="100" height="100" fill={`url(#${gid}-bg)`} opacity={0.55} />
-      {motifLayer(art, seed, variant)}
+      {motifLayer(art, seed)}
       <rect width="100" height="100" fill={`url(#${gid}-glow)`} />
       <rect width="100" height="100" fill={`url(#${gid}-vig)`} />
       <rect width="100" height="100" filter={`url(#${gid}-grain)`} opacity={0.5} />
