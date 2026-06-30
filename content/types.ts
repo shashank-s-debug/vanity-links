@@ -50,6 +50,14 @@ export interface Episode {
   beats: Beat[];
   /** The closing cliffhanger line (also present as the final beat). */
   cliffhanger: string;
+  /**
+   * Production seam: when a real rendered clip exists, set its URL here and the
+   * player streams it as native video (with resume + autoplay-next) instead of
+   * performing the motion screenplay. Until then, the screenplay IS the episode.
+   */
+  videoUrl?: string;
+  /** Optional poster frame for the real-video path. */
+  poster?: string;
 }
 
 export interface CastMember {

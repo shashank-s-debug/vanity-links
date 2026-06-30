@@ -114,7 +114,6 @@ export function LumenProvider({ children }: { children: ReactNode }) {
     } catch {
       /* ignore corrupt storage */
     }
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setHydrated(true);
   }, []);
 

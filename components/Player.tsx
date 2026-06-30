@@ -29,27 +29,36 @@ interface TimedBeat {
 
 const SPEEDS = [0.75, 1, 1.25, 1.5];
 
-export function Player({
-  series,
-  episode,
-  nextEpisode,
-  startAt = 0,
-}: {
+interface PlayerProps {
   series: Series;
   episode: Episode;
   nextEpisode: Episode | null;
   startAt?: number;
-}) {
+}
+
+/**
+ * Dispatcher: streams a real clip when one exists, otherwise performs the
+ * motion screenplay. The branch is before any hooks, so each engine owns its
+ * own hooks cleanly.
+ */
+export function Player(props: PlayerProps) {
+  return props.episode.videoUrl ? <VideoPlayer {...props} /> : <MotionPlayer {...props} />;
+}
+
+function MotionPlayer({ series, episode, nextEpisode, startAt = 0 }: PlayerProps) {
   const router = useRouter();
   const { saveProgress } = useLumen();
 
   const timeline = useMemo<TimedBeat[]>(() => {
+    const out: TimedBeat[] = [];
     let acc = 0;
-    return episode.beats.map((beat, index) => {
+    for (let index = 0; index < episode.beats.length; index++) {
+      const beat = episode.beats[index];
       const start = acc;
       acc += beat.sec;
-      return { beat, start, end: acc, index };
-    });
+      out.push({ beat, start, end: acc, index });
+    }
+    return out;
   }, [episode]);
 
   const total = episode.runtimeSec || timeline[timeline.length - 1]?.end || 1;
@@ -67,7 +76,12 @@ export function Player({
   const lastTsRef = useRef<number | null>(null);
   const positionRef = useRef(position);
   const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  positionRef.current = position;
+
+  // Mirror position into a ref for use in event handlers / persistence,
+  // written from an effect (never during render).
+  useEffect(() => {
+    positionRef.current = position;
+  }, [position]);
 
   /* ----------------------- playback loop (rAF) ----------------------- */
   useEffect(() => {
@@ -136,7 +150,7 @@ export function Player({
   /* ----------------------- autoplay next ----------------------- */
   useEffect(() => {
     if (!ended || !nextEpisode) return;
-    setCountdown(6);
+    // countdown is reset to its start value in seek(); here we just run it down.
     const id = setInterval(() => {
       setCountdown((c) => {
         if (c <= 1) {
@@ -161,11 +175,12 @@ export function Player({
   }, [playing, ended]);
 
   useEffect(() => {
-    wakeControls();
+    // Kick off the initial auto-hide timer without a synchronous setState.
+    hideTimer.current = setTimeout(() => setControlsVisible(false), 3000);
     return () => {
       if (hideTimer.current) clearTimeout(hideTimer.current);
     };
-  }, [wakeControls]);
+  }, []);
 
   /* ----------------------- seeking ----------------------- */
   const seek = useCallback(
@@ -173,6 +188,7 @@ export function Player({
       const t = clamp(to, 0, total - 0.05);
       setPosition(t);
       setEnded(false);
+      setCountdown(6);
       lastTsRef.current = null;
       wakeControls();
     },
@@ -368,6 +384,76 @@ export function Player({
               </Link>
             )}
           </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ===================== real-video engine (production seam) ===================== */
+
+function VideoPlayer({ series, episode, nextEpisode, startAt = 0 }: PlayerProps) {
+  const router = useRouter();
+  const { saveProgress } = useLumen();
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const lastSaveRef = useRef(0);
+
+  const persist = useCallback(
+    (completed: boolean) => {
+      const v = videoRef.current;
+      const dur = v?.duration && Number.isFinite(v.duration) ? v.duration : episode.runtimeSec;
+      saveProgress({
+        slug: series.slug,
+        episode: episode.number,
+        positionSec: completed ? dur : v?.currentTime ?? 0,
+        durationSec: dur,
+        completed,
+      });
+    },
+    [saveProgress, series.slug, episode.number, episode.runtimeSec],
+  );
+
+  useEffect(() => () => persist(false), [persist]);
+
+  return (
+    <div className="fixed inset-0 z-[60] bg-black">
+      <video
+        ref={videoRef}
+        src={episode.videoUrl}
+        poster={episode.poster}
+        autoPlay
+        controls
+        playsInline
+        className="h-full w-full object-contain"
+        onLoadedMetadata={() => {
+          const v = videoRef.current;
+          if (v && startAt > 0 && startAt < (v.duration || Infinity)) v.currentTime = startAt;
+        }}
+        onTimeUpdate={() => {
+          const now = Date.now();
+          if (now - lastSaveRef.current > 4000) {
+            lastSaveRef.current = now;
+            persist(false);
+          }
+        }}
+        onEnded={() => {
+          persist(true);
+          if (nextEpisode) router.push(`/watch/${series.slug}/${nextEpisode.number}`);
+        }}
+      />
+      <div className="pointer-events-none absolute inset-x-0 top-0 flex items-center gap-4 bg-gradient-to-b from-black/80 to-transparent p-4 sm:p-6">
+        <Link
+          href={`/series/${series.slug}`}
+          className="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition hover:bg-white/20 ring-focus"
+          aria-label="Back to series"
+        >
+          <ChevronLeft className="h-6 w-6" />
+        </Link>
+        <div>
+          <p className="text-sm font-semibold text-white sm:text-base">{series.title}</p>
+          <p className="text-xs text-white/60">
+            Episode {episode.number} · {episode.title}
+          </p>
         </div>
       </div>
     </div>

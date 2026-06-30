@@ -57,7 +57,12 @@ export function TopNav() {
     return () => document.removeEventListener("mousedown", onClick);
   }, []);
 
-  useEffect(() => setMenuOpen(false), [pathname]);
+  // Close the menu when the route changes (deferred so it isn't a
+  // synchronous setState inside the effect body).
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setMenuOpen(false));
+    return () => cancelAnimationFrame(id);
+  }, [pathname]);
 
   return (
     <header
