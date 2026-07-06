@@ -3,9 +3,10 @@
 **Destination market: India (always).** Sourcing may be global; success is judged only by Indian commercial viability.
 
 - **Report owner:** Autonomous Global Product Intelligence & Sourcing Team
-- **Iteration:** 1 (baseline portfolio)
-- **Last updated:** 2026-06-30
+- **Iteration:** 2 (re-ranked on strict "high demand × THIN supply" criterion)
+- **Last updated:** 2026-07-06
 - **Status:** Living document. Weaker ideas are replaced as stronger ones are found.
+- **Governing criterion (Iter 2):** Rank on **genuine asymmetry = high demand AND thin supplier/seller density.** Favor **underserved audiences** (cats, anxious pets, new mothers, midlife women, diabetics, seniors) over hot *product categories* — a trend visible enough to find in a few searches is visible to sellers too, so category-level "trending + under-supplied" is nearly a contradiction. Saturated-but-trending items are demoted to "compete on brand only."
 
 ---
 
@@ -20,19 +21,37 @@ Each opportunity is stress-tested by every specialist (Trend Forecaster, Consume
 
 ---
 
-## 1. Portfolio ranking (out of 100)
+## 1. Portfolio ranking (out of 100) — Iteration 2 (strict asymmetry re-grade)
 
-| # | Opportunity | Score | Lifecycle | Sourcing strategy | One-line thesis |
-|---|-------------|-------|-----------|-------------------|-----------------|
-| 1 | **Premium cat litter (tofu/plant clumping) + cat care** | **82** | Early→Growing | Import China / domestic CM | Cat ownership compounding 18–22%; sellers obsess over dogs; litter is boring, consumable, high-repeat |
-| 2 | **Functional pet chews (calming + joint, Ayurvedic)** | **80** | Early→Growing | Domestic CM (India) | Consumable, high-repeat, humanization tailwind, India can source turmeric/ashwagandha cheaply, calming segment still nascent |
-| 3 | **Premium electrolyte / hydration sachets** | **78** | Growing | Domestic CM (India) | 22% CAGR, heat + fitness; ORS is cheap/medicinal, the *premium lifestyle* slot is open |
-| 4 | **Magnesium glycinate (sleep/recovery)** | **74** | Growing | Domestic CM (India) | Search demand surging, GLP-1 co-supplement tailwind, less saturated than creatine |
-| 5 | **Pickleball paddles + balls** | **70** | Early (Acceleration) | Import China | 200→1,200 courts in ~18 months; balls are the consumable; early-mover window |
-| 6 | **Body sunscreen formats (sticks / mists / SPF body)** | **66** | Growing | Domestic CM (India) | Sun care going year-round; *face* SPF crowded, *body/format* whitespace remains |
-| 7 | **Premium reed diffusers / refill home fragrance** | **60** | Growing | Import China / domestic | 11% CAGR, refill = repeat revenue; but fragmented & lower defensibility |
+**Tier A — pass the strict test (high demand + genuinely thin supply / underserved audience):**
 
-**Watchlist (not yet investable — see §7):** K-beauty medicosmetic actives (PDRN/exosome) — high growth, high regulatory + education cost; air-fryer accessories — demand real but commoditized; protein/fiber GLP-1 companion foods — strong thesis, needs more validation.
+| # | Opportunity | Score | Demand × Supply | Sourcing | One-line thesis |
+|---|-------------|-------|-----------------|----------|-----------------|
+| 1 | **Functional pet chews (calming + joint, Ayurvedic)** | **80** | High × **Thin** | Domestic CM | Underserved audience (anxious pets); fragmented supply, no formulated-chew leader; lowest regulatory friction; Ayurvedic-sourcing moat |
+| 2 | **Postnatal / postpartum recovery (lactation + recovery kits, PPD calm)** ⬆NEW | **78** | High × **Thin** | Domestic CM | "Historically underserved vs prenatal"; investment only just starting; huge emotional WTP; high-repeat consumables; Indian postpartum tradition = built-in moat |
+| 3 | **Diabetic-friendly low-GI Indian snacks** ⬆NEW | **76** | **Very high** × Thin-ish | Domestic CM | 100M+ diabetics = demographically locked demand; supply emerging but taste/quality gaps; daily-repeat consumable |
+| 4 | **Cat wet food (mid-premium)** ⬆NEW | **71** | High × **Thin** | Domestic CM | ~31% global CAGR, India underpenetrated, Whiskas-dominated white-space — *but* thin partly due to cold-chain barrier (moat **and** headache) |
+
+**Tier B — demand real, supply arming fast (act now or skip; window closing):**
+
+| # | Opportunity | Score | Note |
+|---|-------------|-------|------|
+| 5 | **Menopause / perimenopause supplements** ⬇DEMOTED | **69** | Was a top thin-supply pick; **now filling fast** — Earthful raised ₹26 Cr (Fireside), + Menoveda, Gynoveda, Pure Nutrition, Herbalife/GNC/Amway; reports cite "high competition." Still strong demand, but asymmetry eroding monthly |
+| 6 | **Senior incontinence + senior-specific nutrition** ⬆NEW (watch→B) | **66** | 230M seniors by 2036 = certain demand; incontinence has incumbents (Friends/Nobel) & bulk/logistics drag; specialized senior *nutrition* is the thinner slot |
+| 7 | **Magnesium glycinate (sleep)** ⬇ | **67** | Demand climbing, but Pure Nutrition/HealthKart/Wellbeing already arming; form-specific window narrowing |
+
+**Tier C — DEMOTED to "compete on brand only" (high demand, saturated supply — fails the strict test):**
+
+| Opportunity | Prior score | Why demoted |
+|-------------|-------------|-------------|
+| Premium cat litter (tofu) | 82 → **~62** | Product already on Amazon India *incl. Amazon Basics*, Pidan, Vetreska, Cature, Nurture Pro… Not overlooked; only a cat-first brand edge remains |
+| Premium electrolyte sachets | 78 → **~60** | Low-sugar premium already contested (Sharrets, Wellcore, Volt, WishNew); + you just missed the summer peak |
+| Pickleball paddles | 70 → **~60** | Indian brands forming fast (Strokess, Gliderz, Airavat) + intl; balls/B2B the only repeat angle |
+| Body sunscreen / reed diffusers | 66 / 60 | Face-SPF crowded; home fragrance fragmented. Keep reed diffusers only as a **festive-season (Oct–Nov) timed play** |
+
+**Watchlist:** K-beauty medicosmetic actives (PDRN/exosome) — high growth, high regulatory + education cost; protein/fiber GLP-1 companion foods — strong thesis, needs India sizing.
+
+> **Iteration 2 headline:** The genuine asymmetry sits in **underserved audiences**, not hot products. Pet chews holds #1 (thinnest supply + easiest execution). Two new audience plays enter Tier A (postnatal recovery, diabetic snacks). Menopause is **demoted** on fresh contradictory evidence (VC-funded crowding). Cat litter, electrolytes and pickleball drop to "brand-only" because their *products* are already well-supplied. Detailed dossiers for the new Tier-A/B entries are in §7b; the original §2–§7 dossiers below remain as reference (note their scores are superseded by this table).
 
 ---
 
@@ -162,6 +181,29 @@ Each opportunity is stress-tested by every specialist (Trend Forecaster, Consume
 
 ---
 
+## 7b. New Tier-A/B dossiers (Iteration 2)
+
+### ⭐ NEW #2 — Postnatal / postpartum recovery (Score 78)
+**Product.** Postpartum recovery consumables for new mothers: lactation-support supplements/teas, recovery nutrition kits (protein + iron + calcium), and calming/PPD-adjacent aromatherapy & relaxation products — Ayurvedic-anchored (shatavari, methi, gond, moringa).
+**Why now / why thin.** Postnatal is explicitly **"historically underserved relative to prenatal,"** with investment *just beginning* to flow — i.e., demand proven, supply still forming. Market ~₹377 Cr (2025) → ₹783 Cr (2035), 7.6% CAGR; the "wellness teas / supplements / recovery kits" sub-segment is the biggest gainer; PPD emotional-wellbeing products rising.
+**Why India / audience moat.** Every Indian family already practices traditional 40-day postpartum care (jaggery/methi/gond ladoo, oil massage) — so **the value needs zero education; only productization/branding is missing.** High emotional willingness-to-pay, gifting occasion (baby showers, new-parent gifting), high-repeat (daily through 3–6 months), subscription-able.
+**Target.** New & expecting mothers 25–38, metro + Tier-2, ₹8L+; plus gifters (family). **Repeat:** daily for months → excellent LTV.
+**Competitors/gaps.** The Moms Co, Mylo, Mamaearth (skew prenatal/baby); postnatal *recovery nutrition* is thin. **Sourcing:** domestic CM (FSSAI). Factory cost `[ESTIMATE]` ₹50–90/unit; selling ₹399–699; **GM ~60–75%.**
+**Risks.** Ingestibles for lactating mothers = **high safety/trust bar** (biggest risk) → needs OB-GYN/lactation-consultant endorsement + clean labels; regulatory care on claims. **Why overlooked:** taboo/quiet category, trust-heavy build most sellers avoid. **Next steps:** clinical advisory panel; start with lactation tea + recovery kit; hospital/lactation-consultant channel.
+
+### ⭐ NEW #3 — Diabetic-friendly low-GI Indian snacks (Score 76)
+**Product.** Genuinely tasty low-GI/no-added-sugar Indian snacks (namkeen, khakhra, roasted mixes, atta cookies) — the daily-consumable format, not medical foods.
+**Why now / why thin-ish.** **100M+ diabetics in India** (among the world's largest) = demographically locked, non-cyclical demand; India diabetic-food market ~10% CAGR. Supply "limited brand presence" and **taste/quality is the recurring complaint** — the real gap is *palatable* low-GI, not existence.
+**Why India / audience moat.** Diabetes is a lifelong daily condition → **highest-repeat consumable imaginable**, low seasonality, strong medical-recommendation loop (doctors/dietitians as a channel). Family also buys for the diabetic member.
+**Target.** Diabetics + pre-diabetics 35–65 and their families, metro→Tier-2/3, all income tiers (mass to premium). **Repeat:** weekly. **Competitors/gaps:** DiabeSmart, Beyond Food, Sugarless Bliss, Diabetic Kitchen, Glucerna/Atkins — emerging but taste-differentiation wide open. **Sourcing:** domestic CM; GM ~55–70%; FSSAI + careful GI/claim substantiation.
+**Risks.** Claim regulation (must substantiate low-GI); taste is make-or-break; price sensitivity in mass tier. **Why overlooked:** "diabetic food = bland medical product" mental model; nobody has made it *crave-able*. **Next steps:** clinical-dietitian formulation + third-party GI testing; doctor/dietitian sampling channel; lead SKU = a tasty everyday namkeen.
+
+### NEW #6 (Tier B) — Senior-specific nutrition (Score 66)
+**Product.** Easy-to-consume senior nutrition (high-protein + bone/joint + easy-digest) and daily-living aids — the *nutrition* slice, avoiding the incumbent-heavy, bulky incontinence/mobility categories.
+**Why / caveats.** 230M seniors by 2036 = certain demand; but incontinence has incumbents (Friends/Nobel) and mobility aids carry logistics/margin drag. Senior *nutrition* is the thinner, higher-margin, higher-repeat slot. **Repeat:** monthly. **Risk:** low tech-savvy of end-user → purchase is by adult children (target the buyer, not just the user). Watch-to-invest; validate before committing.
+
+---
+
 ## 8. Watchlist (track, not yet investable)
 
 - **K-beauty medicosmetic actives (PDRN, exosomes, peptide haircare).** Fastest-growing global beauty narrative; reaches India later (clear adoption gap). **Blocked by:** high regulatory risk (exosomes especially), high consumer-education cost, premium price vs price-sensitive mass. Revisit when a mid-price PDRN serum proves out in India. *Confidence to invest now: Low; trend confidence: High.*
@@ -203,5 +245,16 @@ Each opportunity is stress-tested by every specialist (Trend Forecaster, Consume
 
 ---
 
+### Additional sources (Iteration 2)
+- [Earthful raises ₹26 Cr for women's/menopause nutrition](https://www.whalesbook.com/news/English/healthcarebiotech/Pharma-IPO-Opens-Corona-Remedies-Sees-Moderate-Start-What-Investors-Need-to-Know-NOW/6939899f622f0de332107256)
+- [Future Market Insights — menopause supplement market](https://www.futuremarketinsights.com/reports/menopause-supplement-market)
+- [Expert Market Research — India postpartum mother care market](https://www.expertmarketresearch.com/reports/india-postpartum-mother-care-market)
+- [Grand View — India postpartum products outlook](https://www.grandviewresearch.com/horizon/outlook/postpartum-products-market/india)
+- [IMARC — India elderly care products market](https://www.imarcgroup.com/india-elderly-care-products-market)
+- [BW Healthcare — India senior care $12Bn opportunity](https://www.bwhealthcareworld.com/article/indias-senior-care-sunrise-four-pillars-to-build-the-12bn-economic-opportunity-562996)
+- [Research and Markets — India diabetic food market](https://www.researchandmarkets.com/report/india-diabetic-food-market)
+- [TechSci — India food for diabetics 10.23% CAGR](https://www.techsciresearch.com/news/22470-india-food-for-diabetics-market.html)
+
 ### Change log
-- **2026-06-30 (Iter 1):** Baseline portfolio of 7 ranked + 3 watchlist, built from 12 multi-signal searches. Next iterations: validate cost estimates with live quotes; deepen #1/#2; pressure-test pickleball fad-durability; assess GLP-1 companion-food sizing for India.
+- **2026-06-30 (Iter 1):** Baseline portfolio of 7 ranked + 3 watchlist, built from 12 multi-signal searches.
+- **2026-07-06 (Iter 2):** Re-ranked on strict **demand × thin-supply** criterion (4 fresh searches). **Demoted** cat litter, electrolytes, pickleball to Tier-C "brand-only" (products already well-supplied). **Demoted menopause** to Tier B on contradictory evidence (Earthful ₹26 Cr VC round + crowding). **Added** three underserved-audience plays: postnatal recovery (Tier A #2), diabetic low-GI snacks (Tier A #3), senior nutrition (Tier B). Pet chews retains #1. Next: pressure-test postnatal safety/regulatory path; size the diabetic-snack taste gap with real SKUs; check whether Earthful-style funding is entering postnatal/diabetic too (asymmetry-decay watch).
